@@ -6,8 +6,8 @@
 'use strict';
 var Comment = require('../fragments/comment');
 
-function MainPage() {
+function BlogPage() {
 }
 
-module.exports = new MainPage();
+module.exports = new BlogPage();
 
