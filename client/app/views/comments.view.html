@@ -8,6 +8,7 @@
     <li class="comment" ng-repeat="comment in commentsCtrl.comments">
       <div class="text">{{comment.text}}</div>
       <div class="email">{{comment.email}}</div>
+      <img class="profile-image" ng-src="{{comment.profileImage}}" alt="profile image"/>
     </li>
   </ul>
 </div>

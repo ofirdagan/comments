@@ -25,4 +25,11 @@ describe('A blog page', function () {
     expect(page.getCommentsCount()).toBe(1);
   });
 
+  it('should enhance a comment with a profile picture', function () {
+    blog.setImageForEmail('ofird@wix.com', 'http://myprofile-pic.com/mypic.png');
+    page.navigate();
+    page.postComment('this blog is awesome', 'ofird@wix.com');
+
+    expect(page.getCommentsAt(0).profileImage).toBe('http://myprofile-pic.com/mypic.png');
+  });
 });

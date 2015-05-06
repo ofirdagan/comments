@@ -9,8 +9,9 @@ commentsRouter.route('/')
     res.json(comments.get());
   })
   .post(function (req, res) {
-    comments.add(req.body);
-    res.send(200);
+    comments.add(req.body).then(function (comment) {
+      res.json(comment);
+    });
   });
 
 

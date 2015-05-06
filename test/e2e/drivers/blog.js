@@ -8,6 +8,9 @@ function Blog() {
   this.clearComments = function () {
     server.post('/api/bo/comments/clear');
   };
+  this.setImageForEmail = function (email, imageUrl) {
+    server.post('/api/bo/comments/set-image-for-email', {email: email, imageUrl: imageUrl});
+  };
 }
 
 module.exports = new Blog();

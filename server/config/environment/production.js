@@ -20,6 +20,7 @@ module.exports = {
     process.env.OPENSHIFT_MONGODB_DB_URL + process.env.OPENSHIFT_APP_NAME ||
     'mongodb://localhost/commentstest'
   },
+  fullContact: require('fullcontact-api')(process.env.FULL_CONTACT_API_KEY),
   endpoints: [
     {
       route: '/api/comments',
