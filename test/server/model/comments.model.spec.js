@@ -5,8 +5,4 @@ describe('comments logic', function () {
   beforeEach(function () {
      comments = require('../../../server/model/comments.model');
   });
-
-  afterEach(function () {
-    comments.set([]);
-  });
 });
