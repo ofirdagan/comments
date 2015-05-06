@@ -10,10 +10,11 @@ describe('A blog page', function () {
 
   it('should add / read a comment', function () {
     page.navigate();
-    page.postComment('hi wix');
+    page.postComment('hi wix', 'ofird@wix.com');
 
     expect(page.getCommentsCount()).toBe(1);
     expect(page.getCommentsAt(0).text).toMatch('hi wix');
+    expect(page.getCommentsAt(0).email).toMatch('ofird@wix.com');
   });
 
   it('should persist comments', function () {

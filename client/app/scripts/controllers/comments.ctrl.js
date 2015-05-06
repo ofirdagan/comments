@@ -11,7 +11,7 @@
     });
 
     this.addComment = function () {
-      var comment = {text: self.commentText};
+      var comment = {text: self.commentText, email: self.inputEmail};
       commentsApi.addComment(comment);
       self.comments.unshift(comment);
     };

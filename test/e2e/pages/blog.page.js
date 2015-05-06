@@ -11,8 +11,9 @@ function BlogPage() {
     browser.get('/');
   };
 
-  this.postComment = function (comment) {
+  this.postComment = function (comment, email) {
     $('.comment-input-text').sendKeys(comment);
+    $('.comment-input-email').sendKeys(email || 'yoba@wix.com');
     return $('.comment-submit').click();
   };
 
