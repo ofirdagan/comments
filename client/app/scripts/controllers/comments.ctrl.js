@@ -2,17 +2,17 @@
 
 (function () {
 
-  function CommentsCtrl($http) {
+  function CommentsCtrl(commentsApi) {
     var self = this;
     this.comments = [];
 
-    $http.get('/api/comments').then(function (response) {
-      angular.copy(response.data, self.comments);
+    commentsApi.getComments().then(function (comments) {
+      angular.copy(comments, self.comments);
     });
 
     this.addComment = function () {
       var comment = {text: self.commentText};
-      $http.post('/api/comments/', comment);
+      commentsApi.addComment(comment);
       self.comments.unshift(comment);
     };
   }
