@@ -8,32 +8,20 @@ describe('comments logic', function () {
   var expect = require('expect');
   var sinon = require('sinon');
   require('sinon-as-promised');
-  var config = require('../../../server/config/environment');
-  var fullContactApi = config.fullContact;
+  //TODO: paste from sinon as promised till eof
+  var imageEnhancer = require('../../../server/enhancers/image-enhancer');
 
   afterEach(function () {
     comments.clear([]);
-    fullContactApi.person.findByEmail.restore();
+    imageEnhancer.enhance.restore();
   });
 
   it('should enhance comment', function (done) {
-    sinon.stub(fullContactApi.person, 'findByEmail', function (email, callback) {
-      callback('', {photos: [{url: 'http://mypic.com/my-pic.png'}]});
-    });
+    sinon.stub(imageEnhancer, 'enhance').resolves('image-url');
+
     comments.add({email: 'ofird@wix.com', text: 'hi'}).then(function (comment) {
-      expect(comment.profileImage).toBe('http://mypic.com/my-pic.png');
+      expect(comment.profileImage).toBe('image-url');
       done();
     });
   });
-
-  it('should return undefined in case did not find picture', function (done) {
-    sinon.stub(fullContactApi.person, 'findByEmail', function (email, callback) {
-      callback('', {});
-    });
-    comments.add({email: 'ofird@wix.com', text: 'hi'}).then(function (comment) {
-      expect(comment.profileImage).toBe(undefined);
-      done();
-    });
-  });
-
 });
