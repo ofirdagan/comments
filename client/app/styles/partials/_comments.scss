@@ -64,6 +64,7 @@ $comments-space: 20px;
   .profile-image {
     position: absolute;
     height: $avatar-size;
+    width: $avatar-size;
     border-radius: 50px;
     background-size: 40px;
   }
