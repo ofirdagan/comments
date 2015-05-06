@@ -5,6 +5,4 @@
 function Comments() {
 }
 
-var comments = new Comments();
-
-module.exports = comments;
+module.exports = new Comments();
