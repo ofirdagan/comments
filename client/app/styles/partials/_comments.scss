@@ -1,0 +1,89 @@
+//colors
+$color: #6C6C6C;
+$color-light: #BAB9B9;
+$color-lightest: #f8f8f8;
+$submit-btn-color: rgba(174, 174, 174, 0.77);
+
+//sizes
+$text-size-normal: 17px;
+$text-size-big: 20px;
+
+//spaces
+$comments-space: 20px;
+
+.comments-wrapper {
+  margin: auto;
+  position: relative;
+  width: 1008px;
+}
+
+.comment-submit {
+  display: block;
+  width: 150px;
+  line-height: 30px;
+  background-color: $submit-btn-color;
+  border: none;
+  border-radius: 3px;
+  font-size: $text-size-normal;
+  color: $color;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba($submit-btn-color, .65)
+  }
+}
+
+.add-comment-title {
+  color: $color;
+}
+
+.comments-input {
+  width: 400px;
+  line-height: 25px;
+  font-size: $text-size-normal;
+  border-radius: 4px;
+  border-style: solid;
+  border-color: $color-light;
+  padding-left: 5px;
+  display: block;
+  margin-bottom: $comments-space;
+}
+
+.comments {
+  list-style: none;
+  padding: $comments-space;
+}
+
+.comment {
+  $comment-height: 90px;
+  $avatar-size: 50px;
+  height: $comment-height;
+  margin-bottom: $comments-space;
+  border-bottom: 1px solid $color-lightest;
+  position: relative;
+
+  .profile-image {
+    position: absolute;
+    height: $avatar-size;
+    border-radius: 50px;
+    background-size: 40px;
+  }
+
+  .email {
+    position: absolute;
+    bottom: 3px;
+    color: $color-light;
+    font-style: italic;
+  }
+
+  .text {
+    position: relative;
+    top: 10px;
+    left: $avatar-size;
+    margin-left: 10px;
+    display: inline-block;
+
+    font-family: 'Raleway', sans-serif;
+    font-size: $text-size-big;
+    color: $color;
+  }
+}
