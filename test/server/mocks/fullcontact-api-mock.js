@@ -4,6 +4,9 @@
 var _ = require('lodash');
 
 function FullContactApiMock () {
-}
 
-module.exports = new FullContactApiMock();
+}
+var mock = new FullContactApiMock();
+module.exports = function (appApi) {
+  return mock;
+};
