@@ -3,8 +3,18 @@
  */
 
 function Comments() {
+  var comments = [];
+
+  this.get = function () {
+    return comments;
+  };
+
+  this.add = function (comment) {
+    comments.unshift(comment);
+  };
+
+  this.clear = function () {
+    comments = [];
+  };
 }
-
-var comments = new Comments();
-
-module.exports = comments;
+module.exports = new Comments();
