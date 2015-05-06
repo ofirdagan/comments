@@ -2,7 +2,10 @@
 
 // Test specific configuration
 // ===========================
+var productionConfig = require('./production');
+
 module.exports = {
-  endpoints:[
-  ]
+  endpoints: productionConfig.endpoints.concat([
+
+  ])
 };
