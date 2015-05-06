@@ -1,0 +1,13 @@
+<div ng-controller="CommentsCtrl as commentsCtrl">
+  <ul class="comments">
+    <li class="comment" ng-repeat="comment in commentsCtrl.comments">
+      <div class="text">{{comment}}</div>
+    </li>
+  </ul>
+  <form ng-submit="commentsCtrl.addComment()">
+    <textarea class="comment-input-text" ng-model="commentsCtrl.commentText"></textarea>
+    <input type="submit" class="comment-submit"/>
+  </form>
+</div>
+
+
