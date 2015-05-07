@@ -21,9 +21,9 @@ npm install; bower install
 grunt serve
 ```
 
-# How skip between branches and see the TDD in progress
+# How skip between branches and see the TDD in action
 
-There are currently 10 brnaches for this project. It starts with the branch start (original right?)
+There are currently 10 branches for this project. It starts with the branch start (original right?)
 
 then 1-{{feature-name}}, 2-{{feature-name}}. You get the point right?
 
