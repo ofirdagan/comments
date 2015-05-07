@@ -7,7 +7,7 @@
   </form>
   <ul class="comments">
     <li class="comment" ng-repeat="comment in commentsCtrl.comments">
-      <img class="profile-image" ng-src="{{comment.profileImage}}" alt="profile image"/>
+      <img class="profile-image" ng-src="{{comment.profileImage || '/assets/images/default-profile.jpg'}}" alt="profile image"/>
       <div class="text">“{{comment.text}}”</div>
       <div class="email">{{comment.email}}</div>
     </li>

@@ -32,4 +32,12 @@ describe('A blog page', function () {
 
     expect(page.getCommentsAt(0).profileImage).toBe('http://myprofile-pic.com/mypic.png');
   });
+
+  it('should have default profile image', function () {
+    blog.setImageForEmail('ofird@wix.com', undefined);
+    page.navigate();
+    page.postComment('this blog is awesome', 'ofird@wix.com');
+
+    expect(page.getCommentsAt(0).profileImage).toMatch('/assets/images/default-profile.jpg');
+  })
 });
